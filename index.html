@@ -1,1 +1,34 @@
-<h1>Mon portfolio</h1>
+<body>
+  <p>Portfolio de Richard Lawrence</p>
+
+  <div id="contenu">
+    <!-- Le contenu de la page chargée dynamiquement apparaîtra ici -->
+  </div>
+
+  <script>
+    function callPage(pageUrl) {
+      fetch("pages/"+pageUrl+"handler.html")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Page introuvable");
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("contenu").innerHTML = data;
+        })
+        .catch(error => {
+          document.getElementById("contenu").innerHTML = "<p>Erreur : " + error.message + "</p>";
+        });
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get("page");
+
+    if (page) {
+      callPage(page); // ex: ?page=pages/wordpress/pfc/handler.html
+    } else {
+      callPage("acceuil");
+    }
+  </script>
+</body>
