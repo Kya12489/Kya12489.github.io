@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio de Richard Lawrence</title>
+</head>
 <body>
   <p>Portfolio de Richard Lawrence</p>
 
@@ -8,7 +13,7 @@
 
   <script>
     function callPage(pageUrl) {
-      fetch("pages/"+pageUrl+"/handler.html")
+      fetch("pages/" + pageUrl + "/handler.html")
         .then(response => {
           if (!response.ok) {
             throw new Error("Page introuvable");
@@ -27,9 +32,10 @@
     const page = params.get("page");
 
     if (page) {
-      callPage(page); // ex: ?page=pages/wordpress/pfc/handler.html
+      callPage(page); // ex: ?page=wordpress/pfc
     } else {
-      callPage("acceuil");
+      callPage("acceuil"); // ex: pages/acceuil/handler.html
     }
   </script>
 </body>
+</html>
