@@ -13,7 +13,7 @@ function getCookie(name) {
   return null;
 }
 
-toggleButton.addEventListener("click", () => {
+function changeMode(){
   // Incrémentation de 180°
   angle += 180;
 
@@ -30,9 +30,12 @@ toggleButton.addEventListener("click", () => {
 
     // Thème clair/sombre
     document.body.classList.toggle("nuit", modeNuit);
-    document.querySelector("header").classList.toggle("header-nuit", modeNuit);
     document.cookie = `theme=${modeNuit}; path=/`;
   }, 175); // Moitié du temps d'animation
+}
+
+toggleButton.addEventListener("click", () => {
+  changeMode();
   
 });
 
@@ -40,12 +43,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const theme = getCookie("theme");
 
   if (theme === "true") {
-    // Appliquer le thème nuit
-    document.body.classList.add("nuit");
-    document.querySelector("header").classList.add("header-nuit");
-    themeIcon.src = "element/image/moon.png";
-    modeNuit = true;
-    angle = 180;
-    themeIcon.style.transform = `rotate(${angle}deg)`;
+    changeMode();
   }
 });
