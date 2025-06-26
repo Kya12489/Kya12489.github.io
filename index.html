@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <title>Portfolio de Richard Lawrence</title>
+  <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <p>Portfolio de Richard Lawrence</p>
-
+  
+  <header>
+    <div class="conteneur row centerV">
+      <p>Portfolio de Richard Lawrence</p>
+      <div id="header-button">
+        <button id="jour/nuit"><img class="jour-nuit" src="element/image/sun.png"></button>
+      </div>
+    </div>
+  </header>
   <div id="contenu">
     <!-- Le contenu de la page chargée dynamiquement apparaîtra ici -->
   </div>
 
-  <script>
-    function callPage(pageUrl) {
-      fetch("pages/" + pageUrl + "/handler.html")
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Page introuvable");
-          }
-          return response.text();
-        })
-        .then(data => {
-          document.getElementById("contenu").innerHTML = data;
-        })
-        .catch(error => {
-          document.getElementById("contenu").innerHTML = "<p>Erreur : " + error.message + "</p>";
-        });
-    }
-
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get("page");
-
-    if (page) {
-      callPage(page); // ex: ?page=wordpress/pfc
-    } else {
-      callPage("acceuil"); // ex: pages/acceuil/handler.html
-    }
-  </script>
+  <script src="js/loadPages.js"></script>
+  <script src="js/jour-nuit.js"></script>
 </body>
 </html>

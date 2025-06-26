@@ -1,0 +1,47 @@
+body{
+    color: #000;
+    background-color: #FFF;
+}
+header{
+    background-color: #EEE;
+}
+
+.header-nuit{
+    background-color: #2A2A2A;
+}
+.nuit{
+    background-color: #303030;
+    color: #FFF;
+}
+/* jour nuit btn*/
+.jour-nuit {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.35s ease;
+    
+  }
+  
+  .rotate-half {
+    transform: rotate(180deg);
+  }
+  
+  .rotate-full {
+    transform: rotate(360deg);
+  }
+
+/*conteneur*/
+.conteneur{
+    display: flex;
+}
+.row{
+    flex-direction: row;
+}
+
+.centerH{
+    justify-content: center;
+}
+
+.centerV{
+    align-items: center;
+}
+
