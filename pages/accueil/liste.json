@@ -1,0 +1,23 @@
+[
+  {
+    "nom": "Web",
+    "titre": "Web",
+    "description": "Site web créer a partir d'un CMS/SANS CMS",
+    "couleur": "#21759b",
+    "icone": "🌐"
+  },
+  {
+    "nom": "C#",
+    "titre": "Développement d'application ",
+    "description": "Applications lourde fait en c#",
+    "couleur": "#61dafb",
+    "icone": "💻"
+  },
+  {
+    "nom": "Roblox studio",
+    "titre": "Développement de systéme et de jeu",
+    "description": "Developpement sur Roblox Studio en LuaU",
+    "couleur": "#61dafb",
+    "icone": "◈"
+  }
+]

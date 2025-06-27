@@ -1,48 +1,42 @@
-const toggleButton = document.getElementById("jour/nuit");
-const themeIcon = toggleButton.querySelector("img");
+// Gestion du thème jour/nuit
+    const toggleButton = document.getElementById("jour/nuit");
+    const themeIcon = toggleButton.querySelector("img");
+    let modeNuit = true; // Mode nuit par défaut
+    let angle = 0;
 
-let modeNuit = false;
-let angle = 0;
+    // Base64 des icônes SVG
+    const moonIcon = "element/image/moon.png";
+    const sunIcon = "element/image/sun.png";
 
-function getCookie(name) {
-  const cookies = document.cookie.split('; ');
-  for (let cookie of cookies) {
-    const [key, value] = cookie.split('=');
-    if (key === name) return value;
-  }
-  return null;
-}
+    function getCookie(name) {
+      const cookies = document.cookie.split('; ');
+      for (let cookie of cookies) {
+        const [key, value] = cookie.split('=');
+        if (key === name) return value;
+      }
+      return null;
+    }
 
-function changeMode(){
-  // Incrémentation de 180°
-  angle += 180;
+    function changeMode() {
+      angle += 180;
+      themeIcon.style.transform = `rotate(${angle}deg)`;
+      
+      setTimeout(() => {
+        modeNuit = !modeNuit;
+        themeIcon.src = modeNuit ? moonIcon : sunIcon;
+        document.body.classList.toggle("jour", !modeNuit);
+        document.cookie = `theme=${modeNuit}; path=/; max-age=31536000`; // 1 an
+      }, 175);
+    }
 
-  // Appliquer la rotation
-  themeIcon.style.transition = "transform 1s ease";
-  themeIcon.style.transform = `rotate(${angle}deg)`;
+    toggleButton.addEventListener("click", changeMode);
 
-  // À mi-parcours (après 0.5s), changer l’image + thème
-  setTimeout(() => {
-    modeNuit = !modeNuit;
-
-    // Mise à jour de l’image
-    themeIcon.src = modeNuit ? "element/image/moon.png" : "element/image/sun.png";
-
-    // Thème clair/sombre
-    document.body.classList.toggle("nuit", modeNuit);
-    document.cookie = `theme=${modeNuit}; path=/`;
-  }, 175); // Moitié du temps d'animation
-}
-
-toggleButton.addEventListener("click", () => {
-  changeMode();
-  
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  const theme = getCookie("theme");
-
-  if (theme === "true") {
-    changeMode();
-  }
-});
+    // Initialisation au chargement
+    window.addEventListener("DOMContentLoaded", () => {
+      const theme = getCookie("theme");
+      // Si pas de cookie, rester en mode nuit (défaut)
+      if (theme === "false") {
+        changeMode(); // Passer en mode jour
+      }
+      // Sinon rester en mode nuit par défaut
+    });

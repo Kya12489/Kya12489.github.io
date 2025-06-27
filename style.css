@@ -3,63 +3,447 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
-    color: #000;
-    background-color: #FFF;
-    
-}
-header{
-    background-color: #00000019 ;
-      width: 100%;
-  
-    padding: 10px 20px; /* un peu d'air à gauche/droite */
-    box-sizing: border-box;
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  line-height: 1.6;
+  /* Mode nuit par défaut avec dégradé noir-bleu */
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 35%, #0f3460 100%);
+  color: #e8eaed;
 }
 
-
-.nuit{
-    background-color: #303030;
-    color: #FFF;
+/* Mode jour */
+body.jour {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 35%, #cbd5e1 100%);
+  color: #1e293b;
 }
-/* jour nuit btn*/
-.jour-nuit {
-    width: 25px;
-    height: 25px;
-    transition: transform 0.35s ease;
-    
-  }
-  
-  .rotate-half {
-    transform: rotate(180deg);
-  }
-  
-  .rotate-full {
-    transform: rotate(360deg);
-  }
 
-/*conteneur*/
+/* Header avec effet glassmorphism */
+header {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+body.jour header {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Titre du portfolio avec dégradé */
+header p,.header-a{
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+body.jour header p {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Classes de conteneur existantes */
 .conteneur {
   display: flex;
 }
-.lrgap{
-    gap: 3%;
-    margin-right: 3%;
-}
-.spaceBTW{
-    justify-content: space-between;
-}
+
 .row {
   flex-direction: row;
 }
 
-.centerH {
-  justify-content: center;
+.spaceBTW {
+  justify-content: space-between;
 }
 
 .centerV {
   align-items: center;
 }
 
+.lrgap {
+  gap: 20px;
+}
+
+.centerH {
+  justify-content: center;
+}
+
 .right {
-  margin-left: auto; /* ✅ Fait que l'élément va complètement à droite */
+  margin-left: auto;
+}
+
+/* Bouton jour/nuit stylisé */
+#jour\/nuit {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.jour #jour\/nuit {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#jour\/nuit:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.jour #jour\/nuit:hover {
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Icône jour/nuit avec animation */
+.jour-nuit {
+  width: 28px;
+  height: 28px;
+  transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Conteneur des catégories dans l'en-tête */
+#CategorieProjet {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Catégories individuelles avec flèches */
+.header-category {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Style des liens de catégorie */
+#CategorieProjet a {
+  background: rgba(96, 165, 250, 0.2);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 25px;
+  padding: 8px 16px;
+  color: #e8eaed;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+body.jour #CategorieProjet a {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #1e293b;
+}
+
+#CategorieProjet a:hover {
+  background: rgba(96, 165, 250, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4);
+}
+
+body.jour #CategorieProjet a:hover {
+  background: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Style actif pour les catégories */
+#CategorieProjet a.active {
+  background: rgba(96, 165, 250, 0.4);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+body.jour #CategorieProjet a.active {
+  background: rgba(59, 130, 246, 0.3);
+  color: #1e293b;
+}
+
+/* Flèches pour les catégories avec sous-catégories */
+.category-arrow {
+  font-size: 0.8rem;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+
+.header-category:hover .category-arrow {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* Contenu principal */
+#contenu {
+  padding: 40px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles pour la page d'accueil */
+.welcome-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.jour .welcome-section {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #60a5fa, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grille de projets */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Cartes de projet */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: slideUp 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.jour .project-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.jour .project-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* En-tête de carte de projet */
+.project-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.project-icon {
+  font-size: 3rem;
+  display: block;
+  text-align: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #60a5fa;
+  text-align: center;
+}
+
+body.jour .project-card h3 {
+  color: #3b82f6;
+}
+
+.project-card p {
+  margin-bottom: 20px;
+  opacity: 0.8;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Styles pour le contenu des pages */
+.page-content {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 30px;
+}
+
+body.jour .page-content {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.page-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.jour .page-content h1 {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-content h2 {
+  color: #60a5fa;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+body.jour .page-content h2 {
+  color: #3b82f6;
+}
+
+/* Messages d'erreur stylisés */
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  color: #fca5a5;
+  text-align: center;
+}
+
+body.jour .error-message {
+  background: rgba(239, 68, 68, 0.05);
+  color: #dc2626;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
+
+  .lrgap {
+    gap: 10px;
+  }
+
+  #contenu {
+    padding: 20px 15px;
+  }
+
+  .welcome-section {
+    padding: 40px 15px;
+  }
+
+  .welcome-section h1 {
+    font-size: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .page-content {
+    padding: 25px;
+  }
+
+  .page-content h1 {
+    font-size: 2rem;
+  }
+
+  #CategorieProjet {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #CategorieProjet a {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .header-btn {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .conteneur.spaceBTW {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .header-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
