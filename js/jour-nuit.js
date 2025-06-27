@@ -1,12 +1,18 @@
 // Gestion du thème jour/nuit
     const toggleButton = document.getElementById("jour/nuit");
     const themeIcon = toggleButton.querySelector("img");
+
+    const gitHubButton = document.getElementById("github-logo");
+
     let modeNuit = true; // Mode nuit par défaut
     let angle = 0;
 
     // Base64 des icônes SVG
     const moonIcon = "element/image/moon.png";
     const sunIcon = "element/image/sun.png";
+
+    const gitWhite= "element/image/github-mark-white.png"
+    const gitBlack= "element/image/github-mark.png"
 
     function getCookie(name) {
       const cookies = document.cookie.split('; ');
@@ -25,6 +31,7 @@
         modeNuit = !modeNuit;
         themeIcon.src = modeNuit ? moonIcon : sunIcon;
         document.body.classList.toggle("jour", !modeNuit);
+        gitHubButton.src = modeNuit ? gitWhite : gitBlack;
         document.cookie = `theme=${modeNuit}; path=/; max-age=31536000`; // 1 an
       }, 175);
     }
