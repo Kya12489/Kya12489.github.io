@@ -1,10 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
     color: #000;
     background-color: #FFF;
+    
 }
 header{
     background-color: #00000019 ;
-    
+      width: 100%;
+  
+    padding: 10px 20px; /* un peu d'air à gauche/droite */
+    box-sizing: border-box;
 }
 
 
@@ -29,18 +38,28 @@ header{
   }
 
 /*conteneur*/
-.conteneur{
-    display: flex;
+.conteneur {
+  display: flex;
 }
-.row{
-    flex-direction: row;
+.lrgap{
+    gap: 3%;
+    margin-right: 3%;
+}
+.spaceBTW{
+    justify-content: space-between;
+}
+.row {
+  flex-direction: row;
 }
 
-.centerH{
-    justify-content: center;
+.centerH {
+  justify-content: center;
 }
 
-.centerV{
-    align-items: center;
+.centerV {
+  align-items: center;
 }
 
+.right {
+  margin-left: auto; /* ✅ Fait que l'élément va complètement à droite */
+}
