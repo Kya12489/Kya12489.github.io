@@ -9,8 +9,8 @@
     let angle = 0;
 
     // Base64 des icônes SVG
-    const moonIcon = "element/image/moon.png";
-    const sunIcon = "element/image/sun.png";
+    const moonIcon = "../element/image/moon.png";
+    const sunIcon = "../element/image/sun.png";
 
     
 

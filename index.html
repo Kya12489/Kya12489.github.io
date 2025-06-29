@@ -11,28 +11,219 @@
   <header>
     <div class="conteneur row spaceBTW">
       <div class="conteneur centerV lrgap">
-        <a href="." class="header-a">Portfolio de Richard Lawrence</a>
+        
         <a href="https://github.com/Kya12489">
-          <img id='github-logo'src="element/image/github-mark-white.png" class="git-icon">
+          <img id='github-logo'src="element/image/github-mark-white.png" class="git-icon" alt="github Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/lawrence-richard-a98193351/">
+          <img id='in-logo'src="element/image/InBug-White.png" class="git-icon" alt="linkedin Logo">
         </a>
       </div>
-      <div class="header-btn conteneur row centerV lrgap">
-        <button id="jour/nuit">
+      <div class=" conteneur row centerV lrgap">
+        <button id="jour/nuit" class="header-btn">
           <img class="jour-nuit licon" src="element/image/moon.png" alt="Icône thème">
         </button>
-        <div id="CategorieProjet" class="conteneur row lrgap">
+        <div id="sectionHeader" class="conteneur row lrgap">
           <!-- Les catégories seront ajoutées ici dynamiquement -->
+           <a href="#AproposRef" class="header-btn">À-propos</a>
+           <a href="#CompetencesRef" class="header-btn">Compétences</a>
+           <a href="#FormationsRef" class="header-btn">Formations</a>
+           <a href="#Projets" class="header-btn">Projets</a>
+           <a href="#Contact" class="header-btn">Contact</a>
         </div>
       </div>
     </div>
   </header>
 
   <div id="contenu">
-    <!-- Le contenu de la page chargée dynamiquement apparaîtra ici -->
+    <div class="welcome-section">
+      <h1>Portfolio de Richard Lawrence</h1>
+      <h3>Etudiant informaticien en 1er année de BTS SIO option SLAM (developpement)</h3>
+    </div>
+
+    <!-- #region A-PROPOS-->
+      <section id="Apropos" class="conteneur column lrgap ">
+    <h1 id="AproposRef">À-propos</h1>
+    <div id="section-header" class="conteneur row lrgap">
+        <button class=" header-btn elargir active" data-tab="presentation">Présentation</button>
+        <button class="header-btn elargir" data-tab="objectifs">Objectifs</button>
+        <button class="header-btn elargir" data-tab="passions">Passions</button>
+    </div>
+    <div id="presentation" class="tab-pane active">
+        <p>Je suis actuellement en 1ère année de BTS SIO option SLAM (Services Informatiques aux Organisations - Solutions Logicielles et Applications Métiers), spécialisé dans le développement d'applications lourdes et web.</p>
+        <p>Je souhaite devenir développeur d'applications lourdes ou légères. Ce métier m'attire particulièrement car il me permet de découvrir constamment de nouvelles technologies et de rester à la pointe de l'innovation. La possibilité de pouvoir créer des applications de tout type renforce mon envie de continuer à me former et travailler dans ce domaine.</p>
+        <p>Ce qui me motive le plus dans le développement, c'est la satisfaction de transformer une idée abstraite en une application fonctionnelle et performante. J'apprécie particulièrement les défis techniques qui me poussent à explorer de nouvelles approches et à optimiser mes solutions.</p>
+        <p>Chaque projet que j'entreprends me permet d'approfondir ma compréhension des enjeux techniques et de perfectionner ma capacité à créer des solutions adaptées aux besoins des utilisateurs.</p>
+        <p><strong>Si vous souhaitez en apprendre plus sur moi, ou me contacter, n'hésitez plus, vous pouvez explorer ce site !</strong></p></p>
+    </div>
+    
+    
+    <div id="objectifs" class="tab-pane">
+        <p>Mon objectif principal est de devenir un développeur polyvalent, capable de travailler aussi bien sur des applications desktop complexes que sur des solutions web modernes.</p>
+        <p>Je souhaite me spécialiser dans la création d'applications performantes et durables, parfaitement adaptées aux besoins spécifiques de chaque client. Mon approche se concentre sur l'optimisation et l'expérience utilisateur.</p>
+        <p>À long terme, j'aimerais participer à des projets innovants qui me permettront de repousser les limites techniques et d'explorer les nouvelles possibilités qu'offrent les technologies émergentes.</p>
+    </div>
+    
+    
+    <div id="passions" class="tab-pane">
+        <p><strong>Pêcher : </strong>je trouve la pêche très agréable et elle me permet de me détendre</p>
+        <p><strong>Jouer aux échecs : </strong>les échecs me permettent de passer du temps tout en réfléchissant pour gagner</p>
+                    
+    </div>
+    <script></script>
+</section>
+    <!-- #endregion A-PROPOS-->
+    
+    <!-- #region COMPETENCE-->
+      <section id="Competences" class="conteneur column lrgap ">
+        <h1 id="CompetencesRef">Compétences</h1>   
+        <div class="projects-grid">
+          <div class="card elargir">
+            <h3>Web</h3>
+            <ul>
+              <li>HTML/CSS/JS</li>
+              <li>PHP</li>
+              <li>WordPress</li>
+            </ul>
+          </div>
+          <div class="card elargir">
+            <h3>Programation</h3>
+            <ul>
+              <li>Pyton</li>
+              <li>C#</li>
+              <li>POO</li>
+            </ul>
+          </div>
+          <div class="card elargir">
+            <h3>Base de données</h3>
+            <ul>
+              <li>MySQL</li>
+              <li>SQL</li>
+              <li>MERISE</li>
+            </ul>
+          </div>
+          <div class="card elargir">
+            <h3>Autre</h3>
+            <ul>
+              <li>RGPD</li>
+              <li>Git</li>
+              <li>Docker</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    <!-- #endregion COMPETENCE-->
+    <!-- #region Formation-->
+      <section id="Formations" class="conteneur column lrgap ">
+        <h1 id="FormationsRef">Formations</h1>
+        <div class="projects-grid">
+          <div class="card elargir">
+            <h3>BTS SIO option SLAM</h3>
+            <p>Début : 09/2024 | Fin : <i>07/2026</i></p>
+            <p>Diplôme : en cours</p>
+            <p>
+              Actuellement étudiant en fin de première année de BTS SIO, option SLAM (Solutions Logicielles et Applications Métiers).<br/>
+              Dans ce BTS, nous apprenons à développer des applications lourdes, des applications web, à mettre en place des serveurs web, ainsi qu'à appliquer les principes de la <strong>cybersécurité</strong>.
+            </p>
+          </div>
+          <div class="card elargir">
+            <h3>STI2D option SIN</h3>
+            <p>Début : 09/2022 | Fin : <i>07/2024</i></p>
+            <p>Diplôme : BAC STI2D-SIN mention BIEN</p>
+            <p>
+  J'ai passé ma Première et ma Terminale en STI2D-SIN (Sciences et Technologies de l'Industrie et du Développement Durable – Systèmes d'Information et Numérique).<br/>
+  Dans cette formation, j'ai appris à utiliser des cartes Arduino, divers composants (capteurs, détecteurs, moteurs, LED, etc.), à convertir l'intensité d'un signal en valeur réelle (par exemple : signal d’un thermomètre → température) ainsi qu'à appliquer les lois de l'électricité (loi d'Ohm, etc.).
+</p>
+
+          </div>
+        </div>
+      </section>
+    <!-- #endregion Formaation-->
+    <!-- #region Projets-->
+      <section id="Projets" class="conteneur column lrgap ">
+        <h1 id="ProjetsRef">Mes projets</h1>
+        <div class="projects-grid">
+          <div class="card elargir project-card ">
+            <h3>Pierres Feuilles Ciseaux</h3>
+            <p>Debut : 18/05/2025 | Fin : 27/06/2025</p>
+            <p>Projet du stage de premiere année en BTS SIO. Site web e-commercecréer avec wordpress et WooCommerce pour la micro entreprise Pierres Feuilles ciseaux.<br/>
+            Le site e-commerce permet a l'entreprise de vendre leur produits dans toutes la metropoles de France.</p>
+            <a href="projets/pfc.html" class="btn space centerH">Allez voir</a>
+            <a href="https://pierres-feuilles-ciseaux.fr/" class="btn">Visiter le site</a>
+            <div class="tags conteneur row lrgap centerH"><p class="wordpress ">WordPress</p><p class="css">CSS</p><p class="js">JS</p><p class="html">HTML</p><p class="php">PHP</p><p class="rgpd">RGPD</p></div>
+          </div>
+        </div>
+      </section>
+    <!-- #endregion Projets-->
+    <!-- #region Contact-->
+     <section id="Projets" class="conteneur column lrgap ">
+      <h1 id="Contact">Contactez moi</h1>
+      <p class="contact-subtitle">N'hésitez pas à me contacter pour discuter de vos projets ou pour toute question</p>
+    
+    <div class="success-message" id="successMessage">
+      ✅ Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.
+    </div>
+    
+    <div class="error-message" id="errorMessage">
+      ❌ Une erreur s'est produite. Veuillez réessayer ou me contacter directement.
+    </div>
+
+    <form id="contactForm" action="https://formspree.io/f/mvgrlgow" method="post">
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          class="form-input" 
+          placeholder="votre.email@exemple.com"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Sujet *</label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject" 
+          class="form-input" 
+          placeholder="Sujet de votre message"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          class="form-textarea" 
+          placeholder="Décrivez votre projet, vos besoins ou posez votre question..."
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <span id="btnText">Envoyer le message</span>
+        <span id="btnLoading" class="loading" style="display: none;"></span>
+      </button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Information sur les données renseigner</h3>
+      <p>Conformément au RGPD, les données collectées par ce formulaire servent uniquement afin d'entrer en contact, par mail. Je pourrais être amené à conserver notre prochain échange de mail et les données personnelles afférentes. L'unique finalité de ces données est bien d'entrer en contact et d'échanger. Jamais les données reçues par le biais de ce formulaire ou de nos futurs échanges ne seront utilisées hors de ce contexte, sans votre consentement. Vous bénéficiez d'un droit de suppression de ces mails et de leurs données à tous moments. Il suffit pour cela de me contacter afin que je supprime tous nos échanges. </p>
+    </div>
+     </section>
+    
+
+    <!-- #endregion Contact-->
   </div>
 
   <script src="element/classe/categorie.js"></script>
-  <script src="js/loadPages.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/apropos.js"></script>
   <script src="js/jour-nuit.js"></script>
 </body>
 </html>

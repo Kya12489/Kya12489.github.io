@@ -1,21 +1,56 @@
-<div class="welcome-section">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Portfolio de Richard Lawrence</title>
+  <link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+  
+  <header>
+    <div class="conteneur row spaceBTW">
+      <div class="conteneur centerV lrgap">
+        
+        <a href="https://github.com/Kya12489">
+          <img id='github-logo'src="../element/image/github-mark-white.png" class="git-icon" alt="github Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/lawrence-richard-a98193351/">
+          <img id='in-logo'src="../element/image/InBug-White.png" class="git-icon" alt="linkedin Logo">
+        </a>
+      </div>
+      <a href="../index.html#ProjetsRef" class="header-btn centerH center-button">Retour aux projets</a>
+      <div class=" conteneur row centerV lrgap">
+        <button id="jour/nuit" class="header-btn">
+          <img class="jour-nuit licon" src="../element/image/moon.png" alt="Icône thème">
+        </button>
+        <div id="sectionHeader" class="conteneur row lrgap">
+          <!-- Les catégories seront ajoutées ici dynamiquement -->
+           <a href="#Contexte" class="header-btn">Contexte</a>
+           <a href="#Outils" class="header-btn">Outils utilisé</a>
+           <a href="#Notions" class="header-btn">Notions apprises</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="contenu"><div class="welcome-section">
     <h1>Stage chez Pierres Feuilles Ciseaux</h1>
 <h3>Ce stage a été réalisé  a la fin de ma 1er année de BTS SIO du 18/05/2025 au 27/06/2025. Pour accomplir la mission 
     qui m'a été confié j'ai du concevoir un site web e-commerce <a href="https://pierres-feuilles-ciseaux.fr">pierres-feuilles-ciseaux.fr</a>.</h3>
 </div>
 <div id="projects-container" class="projet-text">
     <!-- Contexte -->
-    <h1 id="contexte">Contexte</h1>
+    <h1 id="Contexte">Contexte</h1>
     <p>L’entreprise Pierres Feuilles Ciseaux, située au 18 rue du Grand Montréjeau à ST
     Barthélémy d’Anjou 49124, a pour but de vendre des objets <strong>artisanaux</strong> tel que des
     bijoux (boucle d'oreille, bague, …) et des objets de décorations comme des
     veilleuses. Toutes les créations sont faites à base de papier ou de matières
-    recyclées.<br/>
-    Elle est sous la responsabilité d'Aurélie Pivette.recyclées.<br/>
+    recyclées.<br>
+    Elle est sous la responsabilité d'Aurélie Pivette.recyclées.<br>
     L'entreprise est composée d'une seule employée qui est également ma tutrice</p>
     <!-- Fin Contexte -->
     <!--Outils utilisée-->
-    <h1>Outils utilisée--</h1>
+    <h1 id="Outils">Outils utilisée--</h1>
     <p>Pour la création du site avec les connaissance acquise en 1er année de BTS SIO options SLAM, j'ai du utiliser principalement le CMS WordPress et le plugin WooCommerce.</p>
     <div class="table-wrapper">
     <table class="styled-table">
@@ -80,7 +115,7 @@ drop personnalisables.</td>
         
         </tbody>
     </table>
-    <table class="styled-table">
+    <br><table class="styled-table">
         <thead>
         <tr>
             <th>Nom</th>
@@ -124,7 +159,7 @@ régulières (automatisées ou manuelles),
 restaurables.</td>
         </tr>
         <tr>
-            <br>
+            
             <td>Complianz</td>
             <td>Gère le consentement RGPD (cookies,
 conditions légales), génère
@@ -136,7 +171,7 @@ bannière de cookies.</td>
     </div>
     <!--FIN Outils utilisée-->
     <!-- Notions apprises -->
-    <h1 id="notionAp">Notions apprises</h1>
+    <h1 id="Notions">Notions apprises</h1>
     <div class="table-wrapper">
     <table class="styled-table">
         <thead>
@@ -163,3 +198,7 @@ bannière de cookies.</td>
     </div>
 <!-- FIN Notions apprises -->
 </div>
+</div>
+<script src="../js/jour-nuitP.js"></script>
+</body>
+</html>
