@@ -5,6 +5,7 @@ class Categorie {
     this.cards = categorie["Cards"]   // majuscule comme dans data.js
     this.script = categorie["script"] 
     this.content = categorie["content"]
+    this.special = categorie["special"] ?? ""
   }
 
   generateShortHeader(){
@@ -82,24 +83,42 @@ class Categorie {
     script.src = this.script;
     section.appendChild(script);
   }
+
+  generateSpecial(){
+    let section = document.createElement("div");
+    section.innerHTML = this.content
+
+    
+    return section;
+  }
+
   genererCategorie() {
-    let section = this.genererCategorieTitle();
+    let section
+    
+    if (this.special){
+      section = this.generateSpecial();
+      console.log(this.special)
+    }else{
+      section = this.genererCategorieTitle();
 
-    if (this.button) {
-      this.generateCategorieHeader(section);
-    }
+      if (this.button) {
+        this.generateCategorieHeader(section);
+      }
 
-    if (this.cards) {
-      this.generateCategorieCard(section);
+      if (this.cards) {
+        this.generateCategorieCard(section);
+      }
+      if(this.script) {
+        this.addScript(section);
+      }
+      if(this.content){
+        this.genererCategorieContent(section);
+      }
+      this.generateShortHeader();
     }
-    if(this.script) {
-      this.addScript(section);
-    }
-    if(this.content){
-      this.genererCategorieContent(section);
-    }
+    
 
-    this.generateShortHeader();
+    
     return section;
   }
 }

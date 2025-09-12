@@ -10,6 +10,25 @@ class Card {
   }
 
   
+  parseDateFlexible(dateStr) {
+    const parts = dateStr.split('-').map(Number);
+    if (parts[0] >= 2000){
+       
+      return Date.parse(dateStr)
+    }
+    else if (parts.length === 3) { // DD/MM/YYYY
+        const [day, month, year] = parts;
+        return new Date(year, month - 1, day);
+    } else if (parts.length === 2) { // MM/YYYY
+        const [month, year] = parts;
+        return new Date(year, month - 1, 1); // On prend le premier jour du mois
+    } else if (parts.length === 1) { // YYYY seul
+        const [year] = parts;
+        return new Date(year, 0, 1); // 1er janvier de l'année
+    } else {
+        return null; // Format invalide
+    }
+  }
 
   generateCardHeader() {
     const htmlCard = document.createElement('div');
@@ -39,8 +58,13 @@ class Card {
   }
 
   generateCardDate(htmlCard) {
+    let fin = this.fin
+    if (this.parseDateFlexible(fin) && this.parseDateFlexible(fin)>Date.now()){
+
+      fin = `<i>${fin}</i>`
+    }
     htmlCard.innerHTML += `
-      <p>Début : <i>${this.debut}</i> | Fin : <i>${this.fin}</i></p>
+      <p>Début : ${this.debut} | Fin : ${fin}</p>
     `;
   }
 
@@ -59,6 +83,7 @@ class Card {
     if (this.debut ) {
       this.generateCardDate(htmlCard);
     }
+    
     if (this.content ) {
       htmlCard.innerHTML += `<p>${this.content}</p>`;
     }

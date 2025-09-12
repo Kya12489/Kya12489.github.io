@@ -1,12 +1,19 @@
 const dataCategories = {
   "fr": [
     {
+      "special":"welcome-section",
+      "content":`<div class="welcome-section">
+      <h1>Portfolio de Richard Lawrence</h1>
+      <h3>Etudiant informaticien en 1er année de BTS SIO option SLAM (developpement)</h3>
+    </div>`
+    },
+    {
       "title": "À-propos",
       "Button": [
         {
           "title": "Présentation",
           "content": `
-          <p>Je suis actuellement en 1ère année de BTS SIO option SLAM (Services Informatiques aux Organisations - Solutions Logicielles et Applications Métiers), spécialisé dans le développement d'applications lourdes et web.</p>
+          <p>Je suis actuellement en 2ème année de BTS SIO option SLAM (Services Informatiques aux Organisations - Solutions Logicielles et Applications Métiers), spécialisé dans le développement d'applications lourdes et web.</p>
            
             <p>La satisfaction de transformer une idée abstraite en une application fonctionnelle et performante et les défis techniques me motive a apprendre de nouvelles technologies et façons de développer.</p>
 
@@ -78,8 +85,8 @@ const dataCategories = {
       "Cards": [
         {
           "title": "BTS SIO option SLAM",
-          "debut": "09/2024",
-          "fin": "07/2026",
+          "debut": "09-2024",
+          "fin": "07-2026",
           
           "content": `
           <p><b>Diplôme : en cours</b></p>
@@ -89,8 +96,8 @@ const dataCategories = {
         },
         {
           "title": "STI2D option SIN",
-          "debut": "09/2022",
-          "fin": "07/2024",
+          "debut": "09-2022",
+          "fin": "07-2024",
           "content": `
             <p><b>Diplôme : BAC STI2D-SIN mention BIEN</b></p>
             <p>
@@ -107,8 +114,8 @@ const dataCategories = {
       "Cards": [
         {
           "title": "Pierres Feuilles Ciseaux",
-          "debut": "18/05/2025",
-          "fin": "27/06/2025",
+          "debut": "18-05-2025",
+          "fin": "27-06-2025",
           "content": `
             <p>Projet du stage de premiere année en BTS SIO. Site web e-commerce créé avec WordPress et WooCommerce pour la micro entreprise Pierres Feuilles Ciseaux.</p>
             <p>Le site e-commerce permet a l'entreprise de vendre leurs produits dans toute la métropole.</p>
@@ -189,12 +196,21 @@ const dataCategories = {
   ],
   "eng": [
     {
+      "special":"welcome-section",
+    "title": "",
+    "content": `<div class="welcome-section">
+        <h1>Richard Lawrence's Portfolio</h1>
+        <h3>Second-year IT student in BTS SIO, SLAM option (development)</h3>
+      </div>`
+
+    },
+    {
       "title": "About me",
       "Button": [
         {
           "title": "Introduction",
           "content": `
-          <p>I am currently in my first year of a BTS SIO (IT Services for Organizations) degree, SLAM option (Software Solutions and Business Applications), specialized in desktop and web application development.</p>
+          <p>I am currently in my second year of a BTS SIO (IT Services for Organizations) degree, SLAM option (Software Solutions and Business Applications), specialized in desktop and web application development.</p>
            
           <p>The satisfaction of transforming an abstract idea into a functional and efficient application, along with technical challenges, motivates me to learn new technologies and development approaches.</p>
 
@@ -266,8 +282,8 @@ const dataCategories = {
       "Cards": [
         {
           "title": "BTS SIO SLAM option",
-          "debut": "09/2024",
-          "fin": "07/2026",
+          "debut": "2024-09",
+          "fin": "2026-07",
           "content": `
           <p><b>Degree: In progress</b></p>
           <p>Currently a first-year student in BTS SIO, SLAM option (Software Solutions and Business Applications).</p>
@@ -276,8 +292,8 @@ const dataCategories = {
         },
         {
           "title": "STI2D SIN option",
-          "debut": "09/2022",
-          "fin": "07/2024",
+          "debut": "2022-09",
+          "fin": "2024-07",
           "content": `
             <p><b>Degree: STI2D-SIN High School Diploma with Merit</b></p>
             <p>
@@ -294,8 +310,8 @@ const dataCategories = {
       "Cards": [
         {
           "title": "Pierres Feuilles Ciseaux",
-          "debut": "18/05/2025",
-          "fin": "27/06/2025",
+          "debut": "2025-05-18",
+          "fin": "2025-06-25",
           "content": `
             <p>First-year BTS SIO internship project. An e-commerce website built with WordPress and WooCommerce for the small business "Pierres Feuilles Ciseaux".</p>
             <p>The e-commerce site allows the company to sell its products throughout the country.</p>
