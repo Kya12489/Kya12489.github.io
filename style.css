@@ -894,3 +894,75 @@ body.jour .error-message {
         align-items: center;
       }
     }
+
+
+/* Menu langues harmonisé avec ton header */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.lang-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  list-style: none;
+  padding: 5px 0;
+  min-width: 140px;
+  z-index: 1000;
+}
+
+.lang-options li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.lang-options li:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Langue active */
+.lang-options li.active {
+  background: linear-gradient(45deg, #60a5fa, #a78bfa);
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Version jour */
+body.jour .lang-options {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.jour .lang-options li {
+  color: black;
+}
+
+body.jour .lang-options li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.jour .lang-options li.active {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  color: white;
+}
+
+/* AJOUT pour afficher le menu déroulant quand cliqué */
+.lang-switch.open .lang-options {
+  display: block;
+}
