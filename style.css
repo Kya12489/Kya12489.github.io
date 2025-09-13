@@ -493,7 +493,7 @@ body.jour .tags p {
               0 0 1px rgba(107, 111, 168, 0.6);
 }
 
-.rgpd {
+.rgpd, .gdpr {
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.8),
               0 0 1px rgba(0, 123, 255, 0.8),
               0 0 1px rgba(0, 110, 230, 0.6),
