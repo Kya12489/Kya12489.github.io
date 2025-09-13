@@ -2,6 +2,7 @@ const dataCategories = {
   "fr": [
     {
       "special":"welcome-section",
+      "parent": "",
       "content":`<div class="welcome-section">
       <h1>Portfolio de Richard Lawrence</h1>
       <h3>Etudiant informaticien en 1er année de BTS SIO option SLAM (developpement)</h3>
@@ -192,6 +193,10 @@ const dataCategories = {
      </section>
       `,
       "script": "js/contact.js"
+    },
+    {
+      "special": "hide",
+      "footer": `<h1>&copy; 2025 Richard Lawrence. Conçu avec ❤️. Tous droits réservés.</h1>`
     }
   ],
   "eng": [
@@ -387,6 +392,10 @@ const dataCategories = {
       </div>
       `,
       "script": "js/contact.js"
+    },
+    {
+      "special": "hide",
+      "footer": `<h1>&copy; 2025 Richard Lawrence. Made with ❤️. All rights reserved.</h1>`
     }
   ]
 };

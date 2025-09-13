@@ -12,9 +12,21 @@ function getCookie(name) {
   return null;
 }
 
-function setCookie(name, value, days = 365) {
-  const maxAge = days * 24 * 60 * 60;
-  document.cookie = `${name}=${value}; path=/; max-age=${maxAge}`;
+function setCookie(name, value) {
+  
+  document.cookie = `${name}=${value}; path=/; max-age=31536000`;
+}
+
+function loadFooter(savedLang){
+  let footer = document.createElement("footer");
+  if (document.querySelector("footer")){
+    footer = document.querySelector("footer")
+  }
+  const parent = document.querySelector("body");
+  
+  footer.innerHTML = dataCategories[savedLang][dataCategories[savedLang].length - 1]["footer"];
+
+  parent.appendChild(footer)
 }
 
 function loadCategories(lang) {
@@ -26,7 +38,10 @@ function loadCategories(lang) {
 
   dataCategories[lang].forEach(element => {
     let newCategorie = new Categorie(element);
-    parent.appendChild(newCategorie.genererCategorie());
+    let toAdd = newCategorie.genererCategorie();
+    if(toAdd){
+      parent.appendChild(toAdd);
+    }
   });
 
   // Sauvegarde dans cookie
@@ -40,21 +55,24 @@ function loadCategories(lang) {
   loadedPage = true;
 }
 
-// ✅ Tout dans DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Charger la langue sauvegardée
-  const savedLang = getCookie("lang") || "fr"; // par défaut français
+  const savedLang = getCookie("lang") || "fr"; 
   loadCategories(savedLang);
-  // 2. Gestion du menu déroulant
+  loadFooter(savedLang);
   const langSwitch = document.querySelector(".lang-switch");
   const langOptions = document.querySelectorAll(".lang-options li");
   const langLabel = document.createElement("span");
-langLabel.classList.add("lang-label");
-langLabel.textContent = txtByLang[savedLang];
-langSwitch.prepend(langLabel);
+  langLabel.classList.add("lang-label");
+  langLabel.textContent = txtByLang[savedLang];
+  langSwitch.prepend(langLabel);
   
   langSwitch.addEventListener("click", () => {
-    langSwitch.classList.toggle("open");
+    if(langSwitch.className.search("open")==-1){
+      langSwitch.classList.toggle("open");
+    }else{
+      langSwitch.classList.remove("open");
+    }
+    
   });
   
   
@@ -62,9 +80,11 @@ langSwitch.prepend(langLabel);
   option.addEventListener("click", (e) => {
     const selectedLang = e.target.dataset.lang;
     loadCategories(selectedLang);
-    langSwitch.classList.remove("open");
-    langLabel.textContent = txtByLang[selectedLang]; // Met à jour le label
-
+    
+    loadFooter(selectedLang)
+    langLabel.textContent = txtByLang[selectedLang]; 
+     
+    
   });
   
 });

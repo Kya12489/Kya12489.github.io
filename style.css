@@ -299,11 +299,21 @@ body.jour .welcome-section {
 
 h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
   background: linear-gradient(45deg, #60a5fa, #a78bfa, #f472b6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+section h1{
+  margin-bottom: -3%;
+}
+#section-header{
+  margin-top: 5%;
+}
+.contact-subtitle{
+  margin-top: 4%;
 }
 
 .welcome-section p {

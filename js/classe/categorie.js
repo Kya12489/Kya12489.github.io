@@ -96,8 +96,9 @@ class Categorie {
     let section
     
     if (this.special){
-      section = this.generateSpecial();
-      console.log(this.special)
+      if(this.special!=="hide"){
+        section = this.generateSpecial();
+      }
     }else{
       section = this.genererCategorieTitle();
 
