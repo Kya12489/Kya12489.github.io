@@ -445,28 +445,31 @@ body section div p {
   padding: 20px;
 }
 
-.tags p {
-  margin-top: 2%;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-radius: 12px;
-  min-width: 80px;
-  font-size: 0.7em;
-  padding: 1em 2em;
+.tags {
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  gap: 8px;
+  justify-content: center; /* centrer dans la carte */
+  margin-top: 10px;
+}
+
+.tags p {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 0.75em;
+  padding: 1% 3%; /* réduit */
   color: white;
-  text-decoration: none;
-  position: relative;
-  border-radius: 1000px;
-  transition: all 0.3s ease;
+  text-align: center;
+  white-space: nowrap; /* évite la casse bizarre */
+  max-width: 100%; /* ne dépasse jamais */
+  word-break: break-word; /* casse si trop long */
+
 }
 
 body.jour .tags p {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid transparent;
-  color: black;
+  color: rgb(2, 2, 2);
 }
 
 .wordpress {
@@ -897,6 +900,11 @@ body.jour .lang-options li.active {
     font-size: 2rem;
   }
 
+  .tags p {
+    
+    padding: 1% 1.5%; /* réduit */
+    
+  }
   .contact-links {
     flex-direction: column;
     align-items: center;
