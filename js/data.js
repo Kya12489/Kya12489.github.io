@@ -5,7 +5,7 @@ const dataCategories = {
       "parent": "",
       "content":`<div class="welcome-section">
       <h1>Portfolio de Richard Lawrence</h1>
-      <h3>Etudiant informaticien en 1er année de BTS SIO option SLAM (developpement)</h3>
+      <h3>Etudiant informaticien en 2ème année de BTS SIO option SLAM (developpement)</h3>
     </div>`
     },
     {
