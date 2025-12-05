@@ -1,7 +1,10 @@
-// Gestion du thème jour/nuit
+document.addEventListener("DOMContentLoaded",function(element){
+    const script = document.getElementById("jour-nuit-script");
+
+  const BASEPATH = script ? script.dataset.basepath : "./";
     const toggleButton = document.getElementById("jour/nuit");
     const themeIcon = toggleButton.querySelector("img");
-
+    console.log(BASEPATH);
     const gitHubButton = document.getElementById("github-logo");
     const inButton = document.getElementById("in-logo");
 
@@ -9,8 +12,8 @@
     let angle = 0;
 
     // Base64 des icônes SVG
-    const moonIcon = "element/image/moon.png";
-    const sunIcon = "element/image/sun.png";
+    const moonIcon = BASEPATH+"element/image/moon.png" ;
+    const sunIcon = BASEPATH+"element/image/sun.png";
 
     
 
@@ -47,3 +50,4 @@
       }
       // Sinon rester en mode nuit par défaut
     });
+})
