@@ -1,6 +1,6 @@
 const dataCategories = {
-  "fr": [
-    {
+  "fr": [ // Français
+    { //Carte de bienvenue
       "special":"welcome-section",
       "parent": "",
       "content":`<div class="welcome-section">
@@ -8,7 +8,7 @@ const dataCategories = {
       <h3>Etudiant informaticien en 2ème année de BTS SIO option SLAM (developpement)</h3>
     </div>`
     },
-    {
+    { //Carte A-Propos
       "title": "À-propos",
       "Button": [
         {
@@ -36,7 +36,7 @@ const dataCategories = {
       ],
       "script": "js/apropos.js"
     },
-    {
+    { // Carte Competences
       "title": "Competences",
       "Cards": [
         {
@@ -81,7 +81,7 @@ const dataCategories = {
         },
       ]
     },
-    {
+    { // Carte Formations
       "title": "Formations",
       "Cards": [
         {
@@ -110,7 +110,7 @@ const dataCategories = {
         }
       ]
     },
-    {
+    { // Carte Projets
       "title": "Projets",
       "Cards": [
         {
@@ -130,7 +130,7 @@ const dataCategories = {
         }
       ]
     },
-    {
+    { // Carte Me contacter
       "title": "Me contacter",
       "content": `
       <p class="contact-subtitle">N'hésitez pas à me contacter pour discuter de vos projets ou pour toute question</p>
@@ -194,13 +194,13 @@ const dataCategories = {
       `,
       "script": "js/contact.js"
     },
-    {
+    { // Pied de Pages
       "special": "hide",
       "footer": `<h1>&copy; 2025 Richard Lawrence. Conçu avec ❤️. Tous droits réservés.</h1>`
     }
   ],
-  "eng": [
-    {
+  "eng": [ // Anglais
+    { //Carte de bienvenue 
       "special":"welcome-section",
     "title": "",
     "content": `<div class="welcome-section">
@@ -209,7 +209,7 @@ const dataCategories = {
       </div>`
 
     },
-    {
+    { //Carte A-Propos
       "title": "About me",
       "Button": [
         {
@@ -237,7 +237,7 @@ const dataCategories = {
       ],
       "script": "js/apropos.js"
     },
-    {
+    { // Carte Competences
       "title": "Skills",
       "Cards": [
         {
@@ -282,7 +282,7 @@ const dataCategories = {
         },
       ]
     },
-    {
+    { // Carte Formations
       "title": "Education",
       "Cards": [
         {
@@ -310,7 +310,7 @@ const dataCategories = {
         }
       ]
     },
-    {
+    { // Carte Projets
       "title": "Projects",
       "Cards": [
         {
@@ -330,7 +330,7 @@ const dataCategories = {
         }
       ]
     },
-    {
+    { // Carte Me contacter
       "title": "Contact me",
       "content": `
       <p class="contact-subtitle">Feel free to contact me to discuss your projects or for any questions</p>
@@ -393,7 +393,7 @@ const dataCategories = {
       `,
       "script": "js/contact.js"
     },
-    {
+    { // Pied de Pages
       "special": "hide",
       "footer": `<h1>&copy; 2025 Richard Lawrence. Made with ❤️. All rights reserved.</h1>`
     }
