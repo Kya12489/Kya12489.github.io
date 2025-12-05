@@ -45,7 +45,9 @@ const dataCategories = {
             <ul>
               <li>HTML/CSS/JS</li>
               <li>PHP</li>
+              <li>Laravel</li>
               <li>WordPress</li>
+              
             </ul>
           `
         },
@@ -55,7 +57,17 @@ const dataCategories = {
             <ul>
               <li>Python</li>
               <li>C#</li>
-              <li>POO</li>
+              <li>Dart</li>
+              <li>Bases POO</li>
+            </ul>
+          `
+        },
+        {
+          "title": "Mobile",
+          "content": `
+            <ul>
+              <li>Flutter</li>
+              <li>Kotlin Compose</li>
             </ul>
           `
         },
@@ -70,9 +82,42 @@ const dataCategories = {
           `
         },
         {
+          "title": "Gestion de projet",
+          "content": `
+            <ul>
+              <li>Trello</li>
+              <li>Diagramme de Gantt</li>
+              <li>Git</li>
+              <li>Méthode AGILE</li>
+            </ul>
+          `
+        },
+        {
+          "title": "Sytèmes & Réseaux",
+          "content": `
+            <ul>
+              <li>Serveur web et BDD</li>
+              <li>Gestion des logs</li>
+              <li>clé ssh</li>
+              <li>ligne de cmd (WSL2)</li>
+            </ul>
+          `
+        },
+        {
+          "title": "Cybersécurité ",
+          "content": `
+            <ul>
+              <li>Méthodes OWASP</li>
+              <li>Conteneurisation</li>
+              <li>Test d’intrusion</li>
+            </ul>
+          `
+        },
+        {
           "title": "Autre",
           "content": `
             <ul>
+              <li>API</li>
               <li>RGPD</li>
               <li>Git</li>
               <li>Docker</li>
@@ -237,51 +282,96 @@ const dataCategories = {
       ],
       "script": "js/apropos.js"
     },
-    { // Carte Competences
-      "title": "Skills",
-      "Cards": [
-        {
-          "title": "Web",
-          "content": `
-            <ul>
-              <li>HTML/CSS/JS</li>
-              <li>PHP</li>
-              <li>WordPress</li>
-            </ul>
-          `
-        },
-        {
-          "title": "Programming",
-          "content": `
-            <ul>
-              <li>Python</li>
-              <li>C#</li>
-              <li>OOP</li>
-            </ul>
-          `
-        },
-        {
-          "title": "Databases",
-          "content": `
-            <ul>
-              <li>MySQL</li>
-              <li>SQL</li>
-              <li>MERISE</li>
-            </ul>
-          `
-        },
-        {
-          "title": "Other",
-          "content": `
-            <ul>
-              <li>GDPR</li>
-              <li>Git</li>
-              <li>Docker</li>
-            </ul>
-          `
-        },
-      ]
+    { //Carte Compétences
+  "title": "Skills",
+  "Cards": [
+    {
+      "title": "Web",
+      "content": `
+        <ul>
+          <li>HTML/CSS/JS</li>
+          <li>PHP</li>
+          <li>Laravel</li>
+          <li>WordPress</li>
+        </ul>
+      `
     },
+    {
+      "title": "Programming",
+      "content": `
+        <ul>
+          <li>Python</li>
+          <li>C#</li>
+          <li>Dart</li>
+          <li>OOP Basics</li>
+        </ul>
+      `
+    },
+    {
+      "title": "Mobile",
+      "content": `
+        <ul>
+          <li>Flutter</li>
+          <li>Kotlin Compose</li>
+        </ul>
+      `
+    },
+    {
+      "title": "Database",
+      "content": `
+        <ul>
+          <li>MySQL</li>
+          <li>SQL</li>
+          <li>MERISE</li>
+        </ul>
+      `
+    },
+    {
+      "title": "Project Management",
+      "content": `
+        <ul>
+          <li>Trello</li>
+          <li>Gantt Chart</li>
+          <li>Git</li>
+          <li>AGILE Method</li>
+        </ul>
+      `
+    },
+    {
+      "title": "Systems & Networks",
+      "content": `
+        <ul>
+          <li>Web server and Database</li>
+          <li>Log management</li>
+          <li>SSH keys</li>
+          <li>Command line (WSL2)</li>
+        </ul>
+      `
+    },
+    {
+      "title": "Cybersecurity",
+      "content": `
+        <ul>
+          <li>OWASP Methods</li>
+          <li>Containerization</li>
+          <li>Penetration testing</li>
+        </ul>
+      `
+    },
+    {
+      "title": "Other",
+      "content": `
+        <ul>
+          <li>API</li>
+          <li>GDPR</li>
+          <li>Git</li>
+          <li>Docker</li>
+        </ul>
+      `
+    }
+  ]
+    },
+
     { // Carte Formations
       "title": "Education",
       "Cards": [
